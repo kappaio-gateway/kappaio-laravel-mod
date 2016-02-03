@@ -1,0 +1,180 @@
+/* Space out content a bit */
+body {
+	font-family: 'Open Sans', sans-serif !important;
+	font-weight: 400;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+header {
+	background: #3a3f41;
+	height: 72px;
+	width: 100%;
+	border-width: 0 0 1px !important;
+	border-color: #080808;
+}
+
+header a,header a:hover {
+	color: #FFFFFF;
+	display: block;
+	text-decoration: none;
+}
+
+header a.logo {
+	text-indent: -1px;
+	font-size: 25px;
+	float: left;
+	margin-top: 15px;
+	margin-right: 27px;
+}
+
+header a span.little-beta {
+	border: 1px solid #ebebeb;
+	padding-left: 2px;
+	padding-right: 2px;
+	font-size: 12px;
+	border-radius: 4px;
+}
+
+.sign-out-button {
+	color: #000 !important;
+	background-color: #fff !important;
+	border-color: #fff !important;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-top: 15px;
+}
+
+header div ul li a.sign-out-button {
+	margin-top: 15px;
+}
+
+.wrapper-full {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+.sign-in-button {
+	color: #fff !important;
+	background-color: #428bca !important;
+	border-color: #357ebd !important;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.verticle-form {
+	width: 500px;
+	margin: 50px auto;
+}
+
+.verticle-form input[type='text'],.verticle-form input[type='password'],.verticle-form input[type='submit']
+	{
+	display: block;
+	margin: 0 auto 18px auto;
+	width: 323px;
+	text-align: center;
+	border-radius: 3px;
+	color: #2d2d2d;
+	outline: none;
+	font-family: inherit;
+	border: 1px #c1c1c1 solid;
+	height: 50px;
+	font-size: 18px;
+}
+
+.verticle-form input[type='submit'] {
+	color: #fff !important;
+	background-color: #428bca;
+	border-color: #357ebd;
+}
+
+.verticle-form .footer,.verticle-form .footer p,.verticle-form .footer p a
+	{
+	text-align: center;
+	color: #000;
+}
+
+.verticle-form .footer p a,.verticle-form .footer p a:hover { //
+	cursor: auto;
+	text-decoration: underline;
+}
+
+.verticle-form .footer p:first-child a {
+	color: #ccc;
+}
+
+h1,h2,h3,p,strong {
+	font-family: 'Open Sans', sans-serif !important;
+	font-weight: 400;
+}
+
+ul {
+	list-style: none outside none;
+}
+
+/* Custom page header */
+.header {
+	border-bottom: 0px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 40px;
+	padding-bottom: 19px;
+}
+
+.footer-wrap {
+	padding-top: 100px;
+	border: 0px;
+}
+
+.footer-list {
+	color: rgb(111, 111, 111);
+	background-color: rgb(51, 51, 51);
+	text-align: center;
+	line-height: 24px;
+	margin-bottom: -16px;
+	list-style: none outside none;
+	padding: 48px 1.618em 48px;
+}
+
+.footer-item {
+	display: inline-block;
+	font-size: 120%;
+	margin-left: 1.618em;
+}
+
+.nav>li>a:hover,.nav>li>a {
+	color: #428bca;
+	text-decoration: none;
+	background: transparent;
+	display: inline-block;
+	font-size: 120%; //
+	margin-left: 1.618em;
+}
+
+.footer-item>a:hover,.footer-item>a,.footer-link {
+	color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+}
+/* Custom page footer */
+.tt-ul {
+	list-style: disc outside none;
+}
+
+.tt-ol {
+	list-style: decimal outside none;
+}
