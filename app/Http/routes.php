@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-	return view('greeting', ['name' => 'BoBo', 'REQUEST_URI' => Request::url()]);
+	return view('greeting', ['REQUEST_URI' => Request::url()]);
 });
 Route::any('test', function(){
     return Input::all();
@@ -22,10 +22,11 @@ Route::group(['prefix' => 'api'], function()
     Route::any('{uri?}', function($uri=null)
     {
         $cmd = 'rsserial -j ';
-        
+
+        parse_str(Request::getContent(),$param);
         $reqStr = json_encode(array(
             'method'    => Request::method(),
-            'parameter' => Input::all(),
+            'parameter' => $param,
             'path'      => ($uri==null) ? [] : explode('/',$uri),
         ));
         $qStr = json_encode(array(
@@ -35,9 +36,6 @@ Route::group(['prefix' => 'api'], function()
         $qStr = str_replace("\\", "\\\\", $qStr);
         $qStr = '"'.str_replace("\"", "\\\"", $qStr).'"';
     
-        //$qStr0 = '"{\"request\":\"{\\\\\"method\\\\\":\\\\\"GET\\\\\",\\\\\"parameter\\\\\":[],\\\\\"path\\\\\":[\\\\\"hello\\\\\"]}\",\"ver\":\"0001\"}"';
-//        return shell_exec($cmd.$qStr);
-        
         return  response(shell_exec($cmd.$qStr))->header('Content-Type',"application/json" );
     })->where(['uri' => '.*']);
 });
@@ -83,12 +81,15 @@ Route::group(['prefix' => 'widget'], function()
             $codes = $codes.$code_;
             $publicRoot = "widgets/".$dir;
             
-            if (!file_exists($publicRoot)) {
+            if (!file_exists($publicRoot)) 
+            {
                 symlink($root, $publicRoot);
-            } elseif (!is_link($publicRoot)) {
+            } elseif (!is_link($publicRoot)) 
+            {
                 unlink($publicRoot);
                 symlink($root, $publicRoot);
-            } elseif (readlink($publicRoot) != $root) { 
+            } elseif (readlink($publicRoot) != $root) 
+            { 
                 unlink($publicRoot);
                 symlink($root, $publicRoot);
             }
