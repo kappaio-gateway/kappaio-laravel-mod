@@ -26,7 +26,7 @@ Route::group(['prefix' => 'api'], function()
         parse_str(Request::getContent(),$param);
         $reqStr = json_encode(array(
             'method'    => Request::method(),
-            'parameter' => $param,
+            'parameter' => array_merge($param, Input::all()),
             'path'      => ($uri==null) ? [] : explode('/',$uri),
         ));
         $qStr = json_encode(array(
